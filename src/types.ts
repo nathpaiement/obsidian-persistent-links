@@ -21,9 +21,7 @@ interface FileMetadata {
   [fileHash: string]: CachedMetadata;
 }
 
-export interface PathsWithLinks {
-  [path: string]: LinkCache[];
-}
+export type PathsWithLinks = Map<string, LinkCache[]>;
 
 export interface LinkWithDestination {
   link: LinkCache;

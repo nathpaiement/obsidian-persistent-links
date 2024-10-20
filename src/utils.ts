@@ -50,8 +50,9 @@ export function filterLinksToItemsPresentInText(
 ) {
   const blockIdsInText = getBlockIds(text);
   const headingsInText = getHeadings(text);
+  const entries: Array<[string, LinkCache[]]> = links instanceof Map ? [...links.entries()] : Object.entries(links);
 
-  return Object.entries(links)
+  return entries
     .map(([filePath, links]) => ({
       filePath,
       links: links.filter(
